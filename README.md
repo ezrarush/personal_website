@@ -1,7 +1,7 @@
 Personal Website
 ================
 
-This is the source code for Ezra Rush's personal website found [here](https://ezrarush.com).
+This is the source code for Ezra Rush's personal website found [here](http://www.ezrarush.com).
 
 Problems? Issues?
 -----------

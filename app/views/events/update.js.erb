@@ -1,0 +1,6 @@
+<% if @event.errors.any? %>
+  $('#modal-error-messages').html('<%= j(render 'error_messages', :object => @event) %>');
+<% else %>
+  $(".event-index").html("<%= j (render 'index') %>")
+  $("#event-modal").modal("hide")
+<% end %>

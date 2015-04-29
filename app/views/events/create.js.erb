@@ -1,0 +1,7 @@
+$('#error-messages').html('');		
+<% if @event.errors.any? %>
+  $('#error-messages').html('<%= j (render 'error_messages', :object => @event) %>');
+<% else %>
+  $('.event-index').html("<%= j (render 'index') %>");
+  $('#event-form').slideUp(350);
+<% end %>

@@ -5,6 +5,11 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    respond_to do |format|
+      format.html
+      format.js
+      format.json
+    end
   end
 
   # GET /events/1
@@ -15,15 +20,24 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /events/1/edit
   def edit
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # POST /events
   # POST /events.json
   def create
+    @events = Event.all
     @event = Event.new(event_params)
 
     respond_to do |format|
@@ -34,12 +48,14 @@ class EventsController < ApplicationController
         format.html { render :new }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+    @events = Event.all
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
@@ -48,6 +64,7 @@ class EventsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
+      format.js
     end
   end
 
