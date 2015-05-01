@@ -1,7 +1,7 @@
-  <%= form_for(@event, remote: true) do |f| %>
+<%= form_for(@event, remote: true) do |f| %>
 
   <div class="form-group">
-    <%= f.label :title %><br>
+    <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
   <div class="form-group">
@@ -9,23 +9,23 @@
     <%= f.check_box :all_day, :checked => @event[:all_day] -%>
   </div>
   <div class="form-group">
-    <%= f.label :start_time, 'Start Date' %><br>
+    <%= f.label :start_time, 'Start Date' %>
     <%= f.date_select :start_time, class: 'form-control' %>
     <span id='start_time_span'>
       &mdash; <%= f.time_select :start_time, :ignore_date => true, class: 'form-control' -%>
     </span>
   </div>
   <div class="form-group" id='end_time_div'>
-    <%= f.label :end_time, 'End Date' %><br>
+    <%= f.label :end_time, 'End Date' %>
     <%= f.datetime_select :end_time, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :description %><br>
+    <%= f.label :description %>
     <%= f.text_area :description, class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= f.submit class: 'btn btn-default' %>
   </div>
-  <% end %>
-</div>
+<% end %>
+
